@@ -124,42 +124,7 @@ respuesta que Alexa pronunciará.
 
 
 # ############################################################################################################################## #
-# ------------------- DESARROLLO SKILL -------------------
-Para el desarrollo de la skill se trabaja desde consola, para establecer la interfaz basica.
-Build: Aqui diseños el modelo de interaccion de la skill
-Code: Aqui escribes o editas el codigo backend de la skill
-Test: Aqui pruebas tu skill como si fueras un usuario
-Distribution: Aqui preparas tu skill para compartirla
-Certification: Aqui envias la skill para que amazon la revise
-Analytics: Aqui ves estadisticas de uso de tu skill
-
-# ------------------- ESTRUCTURA DE PROYECTO -------------------
-Front-end (interaction-model): Lo que el usuario dice y cómo Alexa entiende esas frases.
-Back-end (lambda_function): Lo que hace la skill y qué responde Alexa.
-
-- Estructura basica:
-alexa-skill/
-│
-├── interaction-model.json     # Modelo de interacción (intents, utterances, slots) BACKEND
-├── lambda/                    # Carpeta del código backend
-│   ├── lambda_function.py     # Código principal en Python
-│   ├── requirements.txt       # Dependencias (si usas externas)
-└── skill.json                 # Configuración de la skill
-
-- Estructura completa:
-alexa-skill-hello-world/
-│
-├── skill.json                  # Configuración de la skill (metadatos)
-├── interaction-model.json       # Modelo de interacción (intents, utterances, slots) BACKEND
-│
-├── lambda/                      # Código backend (AWS Lambda)
-│   ├── lambda_function.py       # Código principal en Python
-│   ├── api_client.py            # implementacion de api externa, importandose en lambda
-│   ├── requirements.txt         # Dependencias del proyecto
-│   └── __init__.py              # (opcional, para marcar paquete)
-│
-└── README.md                    # Documentación básica del proyecto
-
+# ------------------- EJEMPLO -------------------
 # Creacion de skill
 - configuracion frontend
 Consola: https://developer.amazon.com/alexa
@@ -320,6 +285,17 @@ El propósito principal de esta skill de Alexa es crear una experiencia de entre
 
 Utilizando la API de The Movie Database (TMDb), Alexa guiará el juego, proporcionará pistas basadas en datos reales de las películas y evaluará las respuestas de los jugadores para determinar quién logra adivinar la película primero. La skill busca ofrecer una forma divertida y única de poner a prueba los conocimientos cinematográficos de los jugadores.
 
+# Estructura de Proyecto
+alexa-skill-hello-world/
+│
+├── skill.json                  # Configuración de la skill (metadatos)
+├── interaction-model.json       # Modelo de interacción (intents, utterances, slots) BACKEND
+│
+├── lambda/                      # Código backend (AWS Lambda)
+│   ├── lambda_function.py       # Código principal en Python
+│   ├── api_client.py            # implementacion de api externa, importandose en lambda
+└── README.md                    # Documentación básica del proyecto
+
 # Frases de invocacion
 Alexa, adivina la película
 Alexa, jugar Adivinanza de películas
@@ -399,8 +375,7 @@ Alexa: (Usando la API de TMDb para verificar el título y compararlo con la pel�
 (Grabación de audio: Música de victoria o aplausos)
 Alexa: "Ahora, Juan, es tu turno. ¿Quieres seguir intentándolo?"
 
-# ############################################################################################################################## #
-# ------------------- DOCUMENTACION PROYECTO SKILL -------------------
+# Estimación Modelos Predictivos
 - SEMANA 1 - Fundamentos y Estructura Básica
 Iteración 1: Proyecto inicial configurado
     Intent: Setup proyecto y intents básicos
@@ -458,4 +433,27 @@ Iteración 3: Entregable: Pruebas y optimización
     Valor: 8    
     Test: Tests flujos completos, optimización y refinamiento
 
-# Que quiere el cliente
+# ------------------- CREACION DE SKILL -------------------
+# Areas de Trabajo
+- Alexa Developer Console (ADC): 
+Aquí defines el skill.json, el interaction model (intents, utterances, slots) y configuras cómo se comunica con tu backend.
+- AWS Lambda: 
+Aquí estará tu código backend en Python (la carpeta /lambda)
+
+# Crear skill en ADC
+- Name your Skill
+Adivina la Película
+- Choose a primary locale
+Spanish (Mexico)
+- Choose a type of experience
+Custom
+- Sync Locales
+Activate 
+- Hosting services
+Provision your own
+- Templates
+Start from Scratch
+
+# Definir el Modelo de Interacción (Frontend de Alexa)
+- Invocations
+
